@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>CodeSquare 2025</title>
+        <link rel="icon" href="img/titan_logo.png" type="image/x-icon">
+    </head>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        <div class="header">
+            <img src="img/titan_logo.png" height="80px" width="80px">
+            <div class="header2-text">
+                <h1>Titan University</h1>
+                <h3>Vavuniya, Sri Lanka</h3>
+            </div>
+        </div>
+        <div class="header2">
+            <img src="img/titan_logo.png" height="80px" width="80px"><br>
+            <div class="header-text">
+                <h1>Titan University</h1>
+            </div>
+        </div>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="#" style="text-decoration: underline;">Register</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="nav2">
+            <a href="index.html">Home</a><br>
+            <a href="#" style="text-decoration: underline;">Register</a><br>
+            <a href="schedule.html">Schedule</a><br>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="register">
+            <h2>Event Registration</h2>
+            <p>Fill in the details to participate in CodeSquare 2025.</p>
+
+            <label>Name</label><input type="text" id="name"><br>
+            <label>Age</label><input id="age" min="10" max="100" type="number"><br>
+            <label>Email</label><input type="email" id="email"><br>
+            <label>Faculty</label>
+            <select id="faculty">
+                <option value="Faculty of Applied Science">Faculty of Applied Science</option>
+                <option value="Faculty of Business Studies">Faculty of Business Studies</option>
+                <option value="Faculty of Technological Studies">Faculty of Technological Studies</option>
+            </select>
+            <br>
+            <label>Reg No</label><input type="text" id="reg_no"><br>
+            <div class="radio">
+                <label>Year</label><input type="radio" name="year">1st <input type="radio" name="year">2nd <input type="radio" name="year">3rd <input type="radio" name="year">4th
+            </div>
+            <label style="width:500px; padding-bottom: 10px;">
+                Why you want to participate in this competition
+            </label><br>
+            <textarea rows="5" id="reason"></textarea><br>
+            <button class="clear-btn" onclick="clearContent()">Clear</button>
+            <button class="submit-btn" onclick="submit()">Submit</button>
+        </div>
+        <div id="popup" class="popup">
+            <div class="popup-box">
+                <h2 style="text-align: center;">Registration Successful</h2>
+                <p id="details"></p>
+                <button id="closeBtn" onclick="closePopup()" class="close-btn">Close</button>
+            </div>
+        </div>
+        <div class="top">
+            <a href="#"><button>Back to top</button></a>
+        </div>
+        <div class="footer">
+            <p>&copy CodeSquare 2025. All rights reserved.</p>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,251 @@
+<html>
+	<head>
+		<style>
+			body{
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				font-family: sans-serif;
+			}
+			.container{
+				background-color:white;
+				max-width:600px;
+				padding:30px;
+				text-align:center;
+				margin: auto;
+				margin-top: 100px;
+				margin-bottom: 100px;
+				border-radius:20px;
+				border:solid;
+				border-color:gray;
+				border: none;
+				transition:0.3s;
+			}
+			.container:hover{
+				box-shadow:9px 9px darkgray;
+			}
+			input{
+				margin:10px; 
+				margin-top:20px; 
+				width:80%; 
+				height: 40px; 
+				padding:10px; 
+				border-radius: 5px;
+				height:40px;
+			}
+			.addTask{
+				background-color:rgb(0, 200, 0);
+				color:white;
+				padding:10px;
+				margin:5px;
+				transition:background-color 0.3s;
+				border-radius: 5px;
+				border: none;
+				font-weight:bold;
+				transition:0.3s;
+				height:38px;
+			}
+			.addTask:hover{
+				background-color:#00c800c2;
+			}
+			#taskList{
+				min-height:150px;
+				color:darkgray;
+				align-content:center;
+				font-weight:bold;
+			}
+			.clearBtn{
+				background-color:#e99f00;
+				color:white;
+				padding:10px;
+				margin:10px;
+				transition:background-color 0.3s;
+				border-radius: 5px;
+				border: none;
+				font-weight:bold;
+				width:95%;
+				transition:0.3s;
+			}
+			.clearBtn:hover{
+				background-color:#e99f00db;
+			}
+			#todoList{
+				padding:10px;
+				margin:20px;
+				list-style:none;
+			}
+			#taskCount{
+				padding-bottom:10px;
+				font-size:30px;
+				font-weight:bold;
+				color:rgb(0, 200, 0);
+			}
+			#empty-message{
+				font-style:italic;
+				font-weight:bold;
+				color:gray;
+			}
+			.todo-item {
+				background-color: #f9f9f9;
+				padding: 15px;
+				margin-bottom: 10px;
+				border-radius: 5px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				border-left: 4px solid #4CAF50;
+				text-align:left;
+			}
+			
+			.todo-text {
+				flex: 1;
+				font-size: 16px;
+				color: #333;
+			}
+			.delete-btn {
+				background-color: #f44336;
+				color: white;
+				border: none;
+				padding: 8px 16px;
+				border-radius: 5px;
+				cursor: pointer;
+				font-size: 14px;
+			}
+			
+			.delete-btn:hover {
+				background-color: #da190b;
+			}
+			.taskContainer{
+				background-color:lightgray;
+				border-radius:10px;
+				padding:10px;
+				margin:15px;
+			}
+			.input-section{
+				gap: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>📝 My To-Do List</h1>
+			<div class="input-section">
+				<input id="taskInput" type="text" placeholder="Enter a new task...." onkeypress="checkEnter(event)">
+				<button class="addTask" onclick="addTask()">Add Task</button>
+			</div>
+			<div id="todoList">
+				<div id="empty-message">No tasks yet. Add one above!</div>
+			</div>
+			<button class="clearBtn" onclick="clearAll()">Clear All Tasks</button>
+			<div class="taskContainer">
+				<h3>Total Tasks</h3>
+				<div id="taskCount">0</div>
+			</div>
+		</div>
+		<script>
+			var tasks = [];
+			var taskCount = 0;
+			function addTask(){
+				//get the input value
+				var input = document.getElementById('taskInput');
+				var taskText = input.value;
+				
+				//check if input is empty
+				if(taskText===''){
+					alert("Please enter a task!");
+					return;
+				}
+				tasks.push(taskText); //add task to array
+				input.value=''; //clear the input value
+				displayTasks(); //display all tasks
+				updateStats(); // update statistics
+			}
+			
+			function updateStats(){
+				var count = document.getElementById('taskCount');
+				count.textContent = tasks.length;
+			}
+			
+			function displayTasks(){
+				const list = document.getElementById('todoList');
+				
+				list.innerHTML = ''; //clear old tasks
+				
+				// if there are no tasks in the array, show the message and stop here.
+				if(tasks.length===0){
+					list.innerHTML = '<div id="empty-message">No tasks yet. Add one above!</div>';
+					return;
+				}
+				
+				// loop through each task in the tasks array
+				for(let i=0; i<tasks.length; i++){
+				
+					//Create a new list item (li) for each task
+					const li = document.createElement('li');
+					li.className = 'todo-item';
+					
+					// create a <span> to display the task text
+					const span = document.createElement('span');
+					span.className= 'todo-text';
+					//span.textContent = `${i+1}. ${tasks[i]}`;
+					span.innerHTML = `<b>${i+1}.</b> ${tasks[i]}`;
+					
+					const deleteBtn = document.createElement('button');
+					deleteBtn.className = 'delete-btn'; //add css class for styling
+					deleteBtn.textContent = 'Delete';
+					
+					deleteBtn.onclick = () => deleteTask(i);
+					
+					li.appendChild(span);
+					li.appendChild(deleteBtn);
+					
+					//Finally, add the list item to the main task list.
+					list.appendChild(li);
+				}
+			}
+			function deleteTask(index){
+				//remove specific task from array
+				tasks.splice(index,1);
+				displayTasks();
+				updateStats();
+			}
+			
+			function clearAll(){
+				//display the confirmation message
+				var confirmClear = confirm("Are you sure you want to delete all tasks?");
+				if(confirmClear){
+					tasks = [];
+					displayTasks();
+					updateStats();
+				}
+			}
+			
+			function checkEnter(event){
+				if(event.key === 'Enter'){
+					addTask();
+				}
+			}
+			
+		
+			/*
+			var taskCount = 0;
+			var tasks = [];
+			function addTask(){
+				var taskInput = document.getElementById("taskInput");
+				if (taskInput===''){
+					alert("")
+				}
+				document.getElementById("empty-message").style.visibility = "hidden";
+				taskCount++;
+				document.getElementById("taskCount").textContent = taskCount;
+				var taskInput = document.getElementById("taskInput").value;
+				taskInput.value="";
+			}
+			function clearTasks(){
+				taskCount=0;
+				document.getElementById("taskCount").textContent = taskCount;
+				document.getElementById("empty-message").style.visibility = "visible";
+				document.getElementById("taskInput").value="";
+			}
+			*/
+		</script>
+	</body>
+</html>

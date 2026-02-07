@@ -1,0 +1,136 @@
+<html>
+	<head>
+		<title>Food Exhibition Center</title>
+		<style>
+			*{
+				margin:0;
+				font-family: sans-serif;
+			}
+			body{
+				background-color:#d3d3d359;
+			}
+			.header{
+				width:100%;
+				padding:20px;
+				text-align:center;
+				margin:auto;
+			}
+			.container{
+				text-items:center;
+				background-color:white;
+				padding:10px;
+				width:880px;
+				margin:auto;
+				border-radius:20px;
+			}
+			.container img{
+				height:250px;
+				width:250px;
+				position: relative;
+				align-items:center;
+				padding:20px;
+				border-radius: 35px;
+				transition: all 0.3s ease;
+			}
+			.tooltip {
+				position: relative;
+				background-color: #333;
+				color: #ffffff;
+				font-size: 14px;
+				padding: 8px 12px;
+				border-radius: 5px;
+				white-space: nowrap;
+				bottom: 300px;
+				left: 105px;
+				opacity: 0;
+				visibility: hidden;
+				transform: translateX(-50%);  /* Center horizontally */
+				transition: all 0.3s ease;
+			}
+			.container td:hover .tooltip{
+				opacity: 1;
+				visibility: visible;
+			}
+			
+			.tooltip::after {
+				content: '';
+				position: absolute;
+				top: 100%;    /* Position at bottom of tooltip */
+				left: 50%;    /* Center horizontally */
+				transform: translateX(-50%);
+				border-width: 6px;
+				border-style: solid;
+				border-color: #333 transparent transparent transparent
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<h1>Exhibition Gallery</h1>
+		</div>
+		<div class="container">
+			<table>
+				<tr>
+					<td>
+						<div class="gallery-item">
+							<img src="Images/Pizza.jpeg" alt="pizza">
+							<span class="tooltip">Pizza</span>
+						 </div>
+					</td>
+					<td>
+						<div class="gallery-item">
+							<img src="Images/Burger.jpeg" alt="Burger">
+							<span class="tooltip">Burger</span>
+						</div>
+					</td>
+					<td>
+						<div class="gallery-item">
+							<img src="Images/Shushi.jpeg" alt="Shushi">
+							<span class="tooltip">Shushi</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="gallery-item">
+							<img src="Images/fruit_salad.jpeg" alt="fruit_salad">
+							<span class="tooltip">fruit_salad</span>
+						</div>
+					</td>
+					<td>
+						<div class="gallery-item">
+							<img src="Images/pasta.jpeg" alt="Pasta">
+							<span class="tooltip">Pasta</span>
+						</div>
+					</td>
+					<td>
+						<div class="gallery-item">
+							<img src="Images/Mexican_tacos.jpeg" alt="Mexican_tacos">
+							<span class="tooltip">Mexican_tacos</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="gallery-item">
+							<img src="Images/Soup.jpeg" alt="Soup">
+							<span class="tooltip">Soup</span>
+						</div>
+					</td>
+					<td>
+						<div class="gallery-item">
+							<img src="Images/cake.jpg" alt="Cake">
+							<span class="tooltip">Cake</span>
+						</div>
+					</td>
+					<td>
+						<div class="gallery-item">
+							<img src="Images/smoothie.jpeg" alt="Smoothie">
+							<span class="tooltip">Smoothie</span>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

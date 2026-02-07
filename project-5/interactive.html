@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title>Interactive Website</title>
+		<style>
+			body{
+				background-color:#d1cece;
+			}
+			.increase{
+				background-color:green;
+				color:white;
+				padding:10px;
+				margin:20px;
+				transition:background-color 0.3s;
+			}
+			.decrease{
+				background-color:red;
+				color:white;
+				padding:10px;
+				margin:20px;
+				transition:background-color 0.3s;
+			}
+			.reset{
+				background-color:gray;
+				color:black;
+				padding:10px;
+				margin:20px;
+				transition:background-color 0.3s;
+			}
+			.container{
+				background-color:white;
+				max-width:400px;
+				padding:30px;
+				text-align:center;
+				margin: auto;
+				margin-top: 100px;
+				border-radius:15px;
+				border:solid;
+				border-color:gray;
+				box-shadow:9px 9px darkgray;
+			}
+			.increase:hover{
+				background-color:#33af33;
+			}
+			.decrease:hover{
+				background-color:#f54242;
+			}
+			.reset:hover{
+				background-color:#ada5a5;
+			}
+			#display{
+				color:blue;
+				font-size:50px;
+				transition:background-color 0.3s;
+				margin:10px;
+				padding:10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Interactive Counter</h1>
+			<p>Click the button to change the number</p>
+			<div id="display">0</div>
+			<button id="increaseBtn" class="increase" onclick="increase()">Increase (+)</button>
+			<button id="decreaseBtn" class="decrease" onclick="decrease()">Decrease (-)</button>
+			<button id="resetBtn" class="reset" onclick="reset()">Reset</button>
+		</div>
+		<script>
+			var counter= 0;
+			function updateDisplay(){
+				document.getElementById("display").textContent=counter;
+			}
+			function increase(){
+				counter++;
+				updateDisplay();
+			}
+			function decrease(){
+				counter--;
+				updateDisplay();
+			}
+			function reset(){
+				counter=0;
+				updateDisplay();
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+.box {
+	width:500px;
+	height:500px;
+	background-color:#60cdf9;
+	text-align:center;
+    border-radius: 20px;
+    margin: auto;
+    color: #fb0505;
+	font-family: cursive;
+	border-color:black;
+	border:solid;
+	box-shadow: -12px 13px 4px 3px #949292;
+	align-content: center;
+}
+.box:hover{
+	background-color:lightgreen;
+}
+
+.insideBox{
+	width:150px;
+	height:100px;
+	background-color:aqua;
+	color:red;
+	text-align:center;
+	border-radius:15px;
+	border:solid;
+	border-color:black;
+	font-family:math;
+	font-weight:bold;
+	margin: auto;
+	font-size:30px;
+}
+
+.insideBox:hover{
+	color:black;
+}

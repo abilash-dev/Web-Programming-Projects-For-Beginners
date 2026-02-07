@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<title>Event Booking</title>
+		<style>
+			body{
+				background-color:lightgray;
+				font-family: system-ui;
+			}
+			.container{
+				background-color:white;
+				max-width:900px;
+				margin:auto;
+				margin-top:20px;
+				margin-bottom:20px;
+				border-radius:10px;
+				padding:10px;
+			}
+			.container h1{
+				text-align:center;
+			}
+			.container label{
+				font-size:18px;
+				font-weight:bold;
+				margin:10px;
+			}
+			.general_input input{
+				margin:10px;
+				height:30px;
+				width:95%;
+				border-radius:5px;
+				border-color:lightgray;
+			}
+			.container textarea{
+				margin:10px;
+				border-radius:5px;
+				border-color:gray;
+				width:95%;
+				padding:10px;
+			}
+			.second_input input{
+				margin:10px;
+			}
+			button{
+				text-align:center;
+				background-color:purple;
+				color:white;
+				padding:10px;
+				width:95%;
+				margin:10px;
+				border-radius:5px;
+				border:none;
+				transition:0.3s;
+			}
+			button:hover{
+				background-color:#b903b9;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<form>-->
+			<div class="container">
+				<h1>Event Booking Form</h1>
+				<div class="general_input">
+					<label>Organizer Name:</label><br>
+					<input type="text" id="orgName">
+					<label>Organization:</label><br>
+					<input type="text" id="org">
+					<label>Email:</label><br>
+					<input type="email" id="email">
+					<label>Contact Number:</label><br>
+					<input type="text" id="contactNo">
+					<label>Event Date:</label><br>
+					<input type="date" id="date">
+					<label>Number of Participants:</label><br>
+					<input type="number" max="500" min="10">
+				</div>
+				<div class="second_input">
+					<label>Event Type:</label><br>
+					<input type="radio" name="event">Conference<br>
+					<input type="radio" name="event">Seminar<br>
+					<input type="radio" name="event">Workshop<br>
+					<input type="radio" name="event">Cultural<br>
+				</div>
+				<div class="second_input">
+					<label>Additional Services:</label><br>
+					<input type="checkbox" name="service">Catering<br>
+					<input type="checkbox" name="service"> Audio/Visual<br>
+					<input type="checkbox" name="service">Photography<br>
+					<input type="checkbox" name="service">Transportation<br>
+				</div>
+				<div class="general_input">
+					<label>Special Instructions:</label><br>
+					<textarea rows="4"></textarea>
+				</div>
+				<button type="submit" onclick="submit()">Submit</button>
+			</div>
+		<!--</form>-->
+		<script>
+			function submit(){
+				var orgName = document.getElementById('orgName');
+				var org = document.getElementById('org');
+				var email = document.getElementById('email');
+				var contactNo = document.getElementById('contactNo');
+				if(orgName.value === ''){
+					alert("Please enter Organizer Name");
+					return;
+				}
+				else if(org.value === ''){
+					alert("Please enter Organization name");
+					return;
+				}
+			}
+		</script>
+	</body>
+</html>

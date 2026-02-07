@@ -1,0 +1,212 @@
+<html>
+	<head>
+		<title>Interactive Website</title>
+		<style>
+			body{
+				background-color:#3759dd;
+				font-family: sans-serif;
+			}
+			.container{
+				background-color:white;
+				max-width:600px;
+				padding:30px;
+				text-align:center;
+				margin: auto;
+				margin-top: 100px;
+				margin-bottom: 100px;
+				border-radius:20px;
+				border:solid;
+				border-color:gray;
+				border: none;
+				transition:0.3s;
+			}
+			.container:hover{
+				box-shadow:9px 9px darkgray;
+			}
+			.control_panel{
+				text-align:left;
+				background-color:#f2f2f2;
+				padding:10px;
+				margin:10px;
+				border-radius: 10px;
+				padding-top: 30px;
+			}
+			#textDisplay{
+				font-size:30px;
+				margin:10px;
+				color:blue;
+				border: solid;
+				border-color: lightgray;
+				border-radius: 10px;
+				padding:30px;
+				font-weight: bold;
+				margin-bottom: 25px;
+				padding-bottom: 40px;
+			}
+			#update{
+				background-color:rgb(5, 92, 255);
+				color:white;
+				padding:10px;
+				margin:10px;
+				transition:background-color 0.3s;
+				border-radius: 5px;
+				border: none;
+			}
+			label{
+				margin:10px; 
+				font-size:20px;
+				color:rgb(78, 78, 78);
+			}
+			input{
+				margin:10px; 
+				margin-top:20px; 
+				width:95%; 
+				height: 40px; 
+				padding:10px; 
+				border-radius: 5px;
+			}
+			#red,#blue,#green,#purple,#orange{
+				color:white;
+				padding:10px;
+				margin:10px;
+				transition:background-color 0.3s;
+				border-radius: 5px;
+				width:100px;
+				font-weight: bold;
+				border: none;
+			}
+			#red{
+				background-color:#ff0000;
+			}
+			#blue{
+				background-color: #0062ff;
+			}
+			#green{
+				background-color: #00ff26;
+			}
+			#purple{
+				background-color: #9900ff;
+			}
+			#orange{
+				background-color: #ffa600;
+			}
+			#upper{
+				background-color:#ff5405;
+				color:white;
+				padding:10px;
+				margin:10px;
+				transition:background-color 0.3s;
+				border-radius: 5px;
+				border: none;
+			}
+			#lower{
+				background-color:#00b3d2;
+				color:white;
+				padding:10px;
+				margin:10px;
+				transition:background-color 0.3s;
+				border-radius: 5px;
+				border: none;
+			}
+			#bg_color{
+				background-color:rgb(95, 95, 95);
+				color:white;
+				padding:10px;
+				margin:10px;
+				transition:background-color 0.3s;
+				border-radius: 5px;
+				border: none;
+			}
+			#reset{
+				background-color:rgb(44, 44, 44);
+				color:white;
+				padding:13px;
+				margin:10px;
+				transition:background-color 0.3s;
+				border-radius: 5px;
+				border: none;
+				width: 130px;
+			}
+			button:hover{
+				transform: scale(1.05);
+				opacity: 80%;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body id="body">
+		<div class="container">
+			<h1>🎨 Text & Color Playground</h1>
+			<div id="textDisplay">Hello, World!</div>
+			<div class="control_panel">
+				<label><b>1. Change the Text</b></label><br>
+				<input type="text" value="Hello, World!" id="textInput"><br>
+				<button id="update" onclick="updateText()">Update Text</button>
+			</div>
+			<div class="control_panel">
+				<label><b>2. Change Text Color</b></label><br>
+				<button id="red" onclick="color('#ff0000')">Red</button>
+				<button id="blue" onclick="color('#0062ff')">Blue</button>
+				<button id="green" onclick="color('#00ff26')">Green</button>
+				<button id="purple" onclick="color('#9900ff')">Purple</button>
+				<button id="orange" onclick="color('#ffa600')">Orange</button>
+			</div>
+			<div class="control_panel">
+				<label><b>3. Transform Text</b></label><br>
+				<button id="upper" onclick="upper()">UPPERCASE</button>
+				<button id="lower" onclick="lower()">lowercase</button>
+			</div>
+			<div class="control_panel">
+				<label><b>4. Change Background Color</b></label><br>
+				<button id="bg_color" onclick="change_bg()">Next Background Color</button>
+				<p style="font-size: 12px;">Click multiple times to cycle through colors!</p>
+			</div>
+			<button id="reset" onclick="reset()">🔄 Reset All</button>
+		</div>
+		
+		<script>
+			function updateText(){
+				var userInput = document.getElementById("textInput").value;
+				document.getElementById("textDisplay").textContent=userInput;
+			}
+			function color(hex){
+				document.getElementById("textDisplay").style.color=hex;
+			}
+			function upper(){
+				//document.getElementById("textDisplay").style.textTransform="uppercase";
+				
+				//(or)
+				
+				var display = document.getElementById("textDisplay");
+				display.textContent = display.textContent.toUpperCase();
+				
+			}
+			function lower(){
+				//document.getElementById("textDisplay").style.textTransform="lowercase";
+				
+				//(or)
+				
+				var display = document.getElementById("textDisplay");
+				display.textContent = display.textContent.toLowerCase();
+				
+			}
+			let num=1;
+			function change_bg(){
+				bg_colors=["#3759dd","#37aedd","#37dd78","#ddc337","#dd6637","#dd37a4"]
+				document.body.style.background=bg_colors[num];
+				num++;
+				if (num>bg_colors.length-1){
+					num=0;
+				}
+			}
+			function reset(){
+				document.getElementById("textInput").value = "Hello, World!";
+				document.getElementById("textDisplay").textContent = "Hello, World!";
+				document.getElementById("textDisplay").style.color = "blue";
+				document.getElementById("body").style.background = "#3759dd";
+				//document.getElementById("textDisplay").style.textTransform="none";
+				num = 1;
+			}
+		</script>
+	</body>
+</html>
