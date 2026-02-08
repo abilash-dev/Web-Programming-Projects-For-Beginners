@@ -1,0 +1,234 @@
+:root {
+  --primary-color: #1E3A8A;   
+  --secondary-color: #0D9488; 
+  --light-bg: #F1F5F9;        
+  --text-dark: #1F2937;       
+  --text-light: #F9FAFB;      
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Sans', Arial, sans-serif;
+    background-color: var(--light-bg);
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+/* Header Section Styles */
+.header-container {
+    position: sticky;
+    top: 3px;
+    background-color: var(--light-bg);
+    z-index: 100;
+}
+
+.logo-section {
+    text-align: center;
+    background-color: var(--light-bg);
+    padding: 10px;
+}
+
+.logo {
+    height: 110px;
+    margin: 10px;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #ddd;
+    margin: 0 20px;
+}
+
+.page-heading {
+    text-align: center;
+    font-size: 32px;
+    font-family: monospace;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 20px;
+    margin: 5px;
+    box-shadow: #9d9d9d 1px 10px 18px 3px;
+}
+
+.page-heading h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+/* Content Wrapper Styles */
+.content-wrapper {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-box {
+    padding: 30px;
+    margin: 32px auto;
+    border: 5px solid #222020a3;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: 'PT Sans', sans-serif;
+    text-align: justify;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-box h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.content-box p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    font-size: 16px;
+}
+
+/* Button Styles */
+.button-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.nav-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    padding: 20px 40px;
+    margin: 10px;
+    font-family: 'PT Sans', sans-serif;
+    color: var(--text-light);
+    border-radius: 18px;
+    font-size: 24px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:hover {
+    background-color: #162f6a; /* darker navy */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-button {
+    background-color: var(--secondary-color);
+}
+
+.back-button:hover {
+    background-color: #0b6b65; /* darker teal */
+}
+
+/* Gallery Styles */
+.gallery-wrapper {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.gallery-item {
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    border: 3px solid var(--primary-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(30, 58, 138, 0.3); /* navy shadow */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+    opacity: 0.85;
+}
+
+.image-caption {
+    margin-top: 12px;
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--primary-color);
+    height: 70px;
+    text-align: center;
+    color: var(--text-light);
+    padding-top: 25px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    position: sticky;
+    bottom: 0;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .page-heading h1 {
+        font-size: 24px;
+    }
+    
+    .nav-button {
+        font-size: 18px;
+        padding: 15px 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
