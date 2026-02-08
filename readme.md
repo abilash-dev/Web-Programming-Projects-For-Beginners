@@ -19,6 +19,3 @@ Collection of small HTML/CSS/JS example projects used for learning.
 - These are standalone static pages; no build step required
 - Use as learning material for HTML, CSS, and JavaScript fundamentals
 - Resources used are for educational purposes only
-
-## Credits
-[Project-3.html](https://abilash-dev.github.io/Web-Programming-Projects-For-Beginners/project-3.html) uses some images from [vau.ac.lk](https://vau.ac.lk).
