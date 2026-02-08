@@ -10,7 +10,7 @@ Collection of small HTML/CSS/JS example projects used for learning.
 - [project-4](https://abilash-dev.github.io/Web-Programming-Projects-For-Beginners/project-4/index.html) - ArtVista Exhibition page
 - [project-5](https://abilash-dev.github.io/Web-Programming-Projects-For-Beginners/project-5.html) - Interactive number counter
 - [project-6](https://abilash-dev.github.io/Web-Programming-Projects-For-Beginners/project-6.html) - Text & color playground (interactive)
-- [project-7](https://abilash-dev.github.io/Web-Programming-Projects-For-Beginners/project-7.html) - Interactive number counter
+- [project-7](https://abilash-dev.github.io/Web-Programming-Projects-For-Beginners/project-7.html) - Todo list
 - [project-8](https://abilash-dev.github.io/Web-Programming-Projects-For-Beginners/project-8.html) - Simple form
 - [project-9](https://abilash-dev.github.io/Web-Programming-Projects-For-Beginners/project-9/index.html) - Gallery with tooltip
 - [project-10](https://abilash-dev.github.io/Web-Programming-Projects-For-Beginners/project-10/index.html) - Simple multiple page website
